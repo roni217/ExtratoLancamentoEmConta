@@ -5,10 +5,12 @@ import java.math.BigDecimal;
 import java.security.Timestamp;
 import java.util.Date;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+@Entity
 public class ControleLancamento implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -28,12 +30,13 @@ public class ControleLancamento implements Serializable {
 	private BigDecimal valorLancamentoRemessa;
 	private Timestamp dateLancamentoContaCorrenteCliente;
 	private Timestamp dateEfetivaLancamento;
+	//private LancamentoContaCorrente lancamentoContaCorrente; 
 
 	public ControleLancamento(Integer id, Date dataEfetivaLancamento, Date dataLancamentoContaCorrenteCliente,
 			Integer numeroEvento, String descricaoGrupoPagamento, String codigoIdentificadorUnico, String nomeBanco,
 			Integer quantidadeLancamentoRemessa, String numeroRaizCNPJ, String numeroSufixoCNPJ,
 			BigDecimal valorLancamentoRemessa, Timestamp dateLancamentoContaCorrenteCliente,
-			Timestamp dateEfetivaLancamento) {
+			Timestamp dateEfetivaLancamento/*, LancamentoContaCorrente lancamentoContaCorrente*/) {
 		super();
 		this.id = id;
 		this.dataEfetivaLancamento = dataEfetivaLancamento;
@@ -48,6 +51,7 @@ public class ControleLancamento implements Serializable {
 		this.valorLancamentoRemessa = valorLancamentoRemessa;
 		this.dateLancamentoContaCorrenteCliente = dateLancamentoContaCorrenteCliente;
 		this.dateEfetivaLancamento = dateEfetivaLancamento;
+		//this.lancamentoContaCorrente =lancamentoContaCorrente;
 	}
 
 	public Integer getId() {
@@ -153,6 +157,14 @@ public class ControleLancamento implements Serializable {
 	public void setDateEfetivaLancamento(Timestamp dateEfetivaLancamento) {
 		this.dateEfetivaLancamento = dateEfetivaLancamento;
 	}
+
+//	public LancamentoContaCorrente getLancamentoContaCorrente() {
+//		return lancamentoContaCorrente;
+//	}
+//
+//	public void setLancamentoContaCorrente(LancamentoContaCorrente lancamentoContaCorrente) {
+//		this.lancamentoContaCorrente = lancamentoContaCorrente;
+//	}
 
 	@Override
 	public int hashCode() {

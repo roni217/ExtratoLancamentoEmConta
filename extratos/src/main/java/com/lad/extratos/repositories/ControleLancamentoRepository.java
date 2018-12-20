@@ -3,9 +3,9 @@ package com.lad.extratos.repositories;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.lad.extratos.domain.DomicilioBancario;
+import com.lad.extratos.domain.ControleLancamento;
 
 @Repository
-public interface BancoRepository extends JpaRepository<DomicilioBancario, Integer> {
+public interface ControleLancamentoRepository extends JpaRepository<ControleLancamento, Integer> {
 
 }

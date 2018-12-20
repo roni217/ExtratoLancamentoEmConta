@@ -16,20 +16,19 @@ public class LancamentoContaCorrente implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private Integer remessaBanco;
-	private Integer situacaoRemessa;// TODO: fazer enum
+	private String situacaoRemessa;// TODO: fazer enum
 	
 	private DomicilioBancario domicilioBancario;
-	private Integer nometipoOperacao;// TODO: fazer enum
+	private String nometipoOperacao;// TODO: fazer enum
 
 	
-	public LancamentoContaCorrente(Integer id, Integer remessaBanco, Integer situacaoRemessa,
-			DomicilioBancario domicilioBancario, Integer nometipoOperacao) {
+	public LancamentoContaCorrente(Integer id, Integer remessaBanco, String situacaoRemessa, String nometipoOperacao, DomicilioBancario domicilioBancario) {
 		super();
 		this.id = id;
 		this.remessaBanco = remessaBanco;
 		this.situacaoRemessa = situacaoRemessa;
-		this.domicilioBancario = domicilioBancario;
 		this.nometipoOperacao = nometipoOperacao;
+		this.domicilioBancario = domicilioBancario;
 	}
 
 	public DomicilioBancario getDomicilioBancario() {
@@ -56,19 +55,19 @@ public class LancamentoContaCorrente implements Serializable {
 		this.remessaBanco = remessaBanco;
 	}
 
-	public Integer getSituacaoRemessa() {
+	public String getSituacaoRemessa() {
 		return situacaoRemessa;
 	}
 
-	public void setSituacaoRemessa(Integer situacaoRemessa) {
+	public void setSituacaoRemessa(String situacaoRemessa) {
 		this.situacaoRemessa = situacaoRemessa;
 	}
 
-	public Integer getNometipoOperacao() {
+	public String getNometipoOperacao() {
 		return nometipoOperacao;
 	}
 
-	public void setNometipoOperacao(Integer nometipoOperacao) {
+	public void setNometipoOperacao(String nometipoOperacao) {
 		this.nometipoOperacao = nometipoOperacao;
 	}
 
